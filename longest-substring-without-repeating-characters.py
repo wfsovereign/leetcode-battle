@@ -28,7 +28,6 @@ class Solution(object) :
 
                 #  更新start指向最新的位置
                 start = d[ch] + 1
-                print('change :', d)
 
             #  更新d[ch]的位置为end
             d[ch] = end
@@ -38,7 +37,6 @@ class Solution(object) :
 
             res = max(res, end - start + 1)
 
-        print('---> ', d)
         return res
 
 
