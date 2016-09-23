@@ -4,8 +4,6 @@
  * @return {number[]}
  */
 var twoSum = function(nums, target) {
-
-
   return (() => {
     var indexArr = [];
     var length = nums.length;
