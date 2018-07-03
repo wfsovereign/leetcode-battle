@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7abc91fb-0a44-46fd-8d4d-0a69eebe8801" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/container-with-the-most-water.js" beforeDir="false" afterPath="$PROJECT_DIR$/container-with-the-most-warter/container-with-the-most-water.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fibonacci.py" beforeDir="false" afterPath="$PROJECT_DIR$/fibonacci/fibonacci.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integer-to-roman.js" beforeDir="false" afterPath="$PROJECT_DIR$/integer-to-roman/integer-to-roman.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/longest-substring-without-repeating-characters.js" beforeDir="false" afterPath="$PROJECT_DIR$/longest-substring-without-repeating-characters/longest-substring-without-repeating-characters.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/longest-substring-without-repeating-characters.py" beforeDir="false" afterPath="$PROJECT_DIR$/longest-substring-without-repeating-characters/longest-substring-without-repeating-characters.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/palindrome-number.js" beforeDir="false" afterPath="$PROJECT_DIR$/palindrome-number/palindrome-number.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reverse-integer.js" beforeDir="false" afterPath="$PROJECT_DIR$/reverse-integer/reverse-integer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/string-to-integer-atoi.js" beforeDir="false" afterPath="$PROJECT_DIR$/string-to-integer-atoi/string-to-integer-atoi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tow-sum.js" beforeDir="false" afterPath="$PROJECT_DIR$/two-sum/index.js" afterDir="false" />
-    </list>
+    <list default="true" id="7abc91fb-0a44-46fd-8d4d-0a69eebe8801" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -24,11 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="string-to-integer-atoi.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/string-to-integer-atoi/string-to-integer-atoi.js">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="14" column="47" lean-forward="true" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
+            <state relative-caret-position="46">
+              <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -71,11 +61,6 @@
             <path>
               <item name="leetcode-battle" type="b2602c69:ProjectViewProjectNode" />
               <item name="leetcode-battle" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="leetcode-battle" type="b2602c69:ProjectViewProjectNode" />
-              <item name="leetcode-battle" type="462c0819:PsiDirectoryNode" />
-              <item name="string-to-integer-atoi" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -120,7 +105,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1530594504851</updated>
-      <workItem from="1530594506102" duration="979000" />
+      <workItem from="1530594506102" duration="1220000" />
     </task>
     <task id="LOCAL-00001" summary="add binary tree">
       <created>1530594806132</created>
@@ -136,23 +121,43 @@
       <option name="project" value="LOCAL" />
       <updated>1530594926607</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="update project structure">
+      <created>1530595559088</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1530595559088</updated>
+    </task>
+    <task id="LOCAL-00004" summary="update project structure">
+      <created>1530595587962</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1530595587962</updated>
+    </task>
+    <task id="LOCAL-00005" summary="remove unnecessary config file">
+      <created>1530595700300</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1530595700300</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="979000" />
+    <option name="totallyTimeSpent" value="1220000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="450" y="23" width="1230" height="1027" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.32276422" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.32276422" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" weight="0.5233831" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.5233831" />
       <window_info id="Favorites" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -174,7 +179,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add binary tree" />
     <MESSAGE value="remove unnecessary file" />
-    <option name="LAST_COMMIT_MESSAGE" value="remove unnecessary file" />
+    <MESSAGE value="update project structure" />
+    <MESSAGE value="remove unnecessary config file" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove unnecessary config file" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -260,13 +267,6 @@
     <entry file="file://$PROJECT_DIR$/fibonacci/fibonacci.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -277,8 +277,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/string-to-integer-atoi/string-to-integer-atoi.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="14" column="47" lean-forward="true" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
+        <state relative-caret-position="69">
+          <caret line="3" column="3" lean-forward="true" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
         </state>
       </provider>
     </entry>
