@@ -19,9 +19,9 @@ function iqTest(numbers) {
     var oddNumberCount = 0
     var evenNumberCount = 0
     for (var i = 0; i < length; i++) {
-        if (array[i] % 2 === 0) {
+        if (array[i] % 2 === 1) {
             oddNumberCount++
-        } else if (array[i] % 2 === 1) (
+        } else if (array[i] % 2 === 0) (
             evenNumberCount++
         )
         if (oddNumberCount >= 2 || evenNumberCount >= 2) {
@@ -34,10 +34,41 @@ function iqTest(numbers) {
 
     return array.findIndex(item => {
         if (isEven) {
-            return item % 2 === 0
+            return item % 2 === 1
         }
-        return item % 2 === 1
+        return item % 2 === 0
     }) + 1
+}
+
+// other clever method
+function iqTest(numbers){
+    var nums = numbers.split(" ").map(x => x % 2);
+    var sum = nums.reduce((a,b) => a + b);
+    var target = sum > 1 ? 0 : 1;
+
+    return nums.indexOf(target) + 1;
+}
+
+// this method make me learned x & 1 for judge is the number odd.
+/*
+Because the number 1 bits are 00000001, when number & 1, will keep the number last bit is previous, and others bit change to 0.
+So if the number is odd, the last bit will be 1, the number & 1 result will be 1. Otherwise, the last bit will be 0, the result will be 0.
+* */
+function iqTest(numbers){
+    numbers = numbers.split(' ')
+
+    var evens = []
+    var odds = []
+
+    for (var i = 0; i < numbers.length; i++) {
+        if (numbers[i] & 1) {
+            odds.push(i + 1)
+        } else {
+            evens.push(i + 1)
+        }
+    }
+
+    return evens.length === 1 ? evens[0] : odds[0]
 }
 
 var testData = "2 4 7 8 10"
