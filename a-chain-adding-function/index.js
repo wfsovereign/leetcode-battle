@@ -25,10 +25,30 @@ We can assume any number being passed in will be valid whole number.
 
 function add (n) {
   let sum = n
+
   function inner (b) {
     sum += b
     return inner
   }
+
   inner.valueOf = () => sum
   return inner
 }
+
+function add1 (n) {
+  const fn = (b) => add1(n + b)
+  fn.valueOf = () => n
+  return fn
+}
+
+/*
+*
+* Function is Object also, and Object.prototype.valueOf, the valueOf() method returns the primitive value of the specified object.
+* JavaScript calls the valueOf method to convert an object to a primitive value. You rarely need to invoke the valueOf method yourself;
+ * JavaScript automatically invokes it when encountering an object where a primitive value is expected.
+ *
+ * The short version is: if an object is being coerced into a primitive value (boolean, number, string),
+  * and contains a method called valueOf, that method is called and the result is used in place of the object.
+ *
+ * So we can use valueOf to complete curring, that use valueOf store current value and return function reference.
+* */
