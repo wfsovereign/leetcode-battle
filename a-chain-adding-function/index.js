@@ -52,3 +52,11 @@ function add1 (n) {
  *
  * So we can use valueOf to complete curring, that use valueOf store current value and return function reference.
 * */
+
+
+function add2(n) {
+  let fn = m => add2(n + m);
+  fn.toString = () => n;
+  return fn;
+}
+
