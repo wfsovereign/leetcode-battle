@@ -41,3 +41,12 @@ function towerBuilder (nFloors) {
 }
 
 console.log(towerBuilder(6))
+
+function towerBuilder1 (n) {
+  return Array.from({ length: n }, function (v, k) {
+    const spaces = ' '.repeat(n - k - 1)
+    return spaces + '*'.repeat(k + k + 1) + spaces
+  })
+}
+
+console.log(towerBuilder1(6))
