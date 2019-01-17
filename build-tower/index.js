@@ -34,23 +34,10 @@ and a tower of 6 floors looks like below
 * */
 
 function towerBuilder (nFloors) {
-  const w = nFloors * 2 - 1
-  const getInitFloor = () => Array(w).fill(' ')
-  const result = []
-  let index = 1
-  while (index <= nFloors) {
-    let count = 2 * index - 1
-    let startIndex = nFloors - index
-    let floor = getInitFloor()
-    while (count > 0) {
-      floor[startIndex] = '*'
-      startIndex++
-      count--
-    }
-    result.push(floor)
-    index++
-  }
-  return result.map(item => item.join(''))
+  const getInitFloor = () => Array(nFloors * 2 - 1).fill(' ')
+  return Array(nFloors).fill('').map((_, index) => {
+    return getInitFloor().fill('*', nFloors - (index + 1), nFloors - (index + 1) + (2 * (index + 1) - 1)).join('')
+  })
 }
 
 console.log(towerBuilder(6))
