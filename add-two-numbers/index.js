@@ -30,29 +30,66 @@ function ListNode(val, next) {
     this.next = next
 }
 
-var addTwoNumbers = function (l1, l2) {
-    if (!Array.isArray(l1) || !Array.isArray(l2)) {
-        return
+function getListNodeValue (l) {
+    let result = ''
+    if (l.next !== null && l.next !== undefined) {
+       result += getListNodeValue(l.next)
     }
-    var array1 = l1.reverse()
-    var array2 = l2.reverse()
-
-    if (array1.length < array2.length) {
-        var box = new Array(...array1)
-        array1 = array2
-        array2 = box
-    }
-
-    const length = array1.length
-    const result = []
-    var effluence = 0
-    for (var i = 0; i < length; i++) {
-        const sum = array1[i] + array2[i] + effluence
-        result.push(sum % 10)
-        effluence = parseInt(sum / 10)
-    }
-    console.log('---> ', result)
+    result += l.val
     return result
-};
+}
 
-console.log('res :', addTwoNumbers([2, 4, 3], [5, 6, 4]))
+function generateListNode (array) {
+    const length = array.length
+    return {
+        val: array[0],
+        next: length > 1 ? generateListNode(array.slice(1, length)) : null
+    }
+}
+
+function addWithString (s1, s2) {
+  const a1 = s1.split('')
+  const a2 = s2.split('')
+  const length = a1.length > a2.length ? a1.length : a2.length
+  const result = []
+  let remainder = 0
+  for(let i =0; i < length; i++) {
+    let items = ((parseInt(a1[i]) || 0) + (parseInt(a2[i]) || 0))
+    let sum = items + remainder
+
+    result.push(sum % 10)
+    remainder = sum >= 10 ? 1 : 0
+  }
+  return result
+}
+
+var addTwoNumbers = function (l1, l2) {
+    return generateListNode(addWithString(getListNodeValue(l1),  getListNodeValue(l2)).map(item => parseInt(item)))
+}
+
+let l1 = {
+    val: 2,
+    next: {
+        val: 4,
+        next: {
+            val: 3
+        }
+    }
+}, l2 = {
+    val: 5,
+    next: {
+        val: 6,
+        next: {
+            val: 4
+        }
+    }
+}
+
+console.log('res :', addTwoNumbers(l1, l2))
+
+let l3 = generateListNode([1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1])
+let l4 = {"val":1,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":1,"next":null}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+// console.log('l3, ', JSON.stringify(l3))
+// console.log(getListNodeValue(l3))
+console.log('---------------')
+console.log('2, ', JSON.stringify(addTwoNumbers(l3, generateListNode([5, 6, 4]))))
