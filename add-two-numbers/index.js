@@ -64,7 +64,15 @@ function addWithString (s1, s2) {
 }
 
 var addTwoNumbers = function (l1, l2) {
-    return generateListNode(addWithString(getListNodeValue(l1),  getListNodeValue(l2)).map(item => parseInt(item)))
+    // return generateListNode(addWithString(getListNodeValue(l1),  getListNodeValue(l2)).map(item => parseInt(item)))
+  return listNodeSum(l1, l2)
+}
+
+function listNodeSum(l1, l2, next = 0){
+  return (l1 || l2 || next) && {
+    val: (next += ((l1 && l1.val) || 0) + ((l2 && l2.val) || 0)) % 10,
+    next: (l1 && l1.next || l2 && l2.next || next > 9) && listNodeSum(l1 && l1.next, l2 && l2.next, next > 9)
+  }
 }
 
 let l1 = {
@@ -85,11 +93,12 @@ let l1 = {
     }
 }
 
-console.log('res :', addTwoNumbers(l1, l2))
+// console.log('res :', addTwoNumbers(l1, l2))
 
 let l3 = generateListNode([1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1])
 let l4 = {"val":1,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":1,"next":null}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
 // console.log('l3, ', JSON.stringify(l3))
 // console.log(getListNodeValue(l3))
 console.log('---------------')
-console.log('2, ', JSON.stringify(addTwoNumbers(l3, generateListNode([5, 6, 4]))))
+// console.log('2, ', JSON.stringify(addTwoNumbers(l3, generateListNode([5, 6, 4]))))
+console.log('3, ', JSON.stringify(addTwoNumbers(generateListNode([5]), generateListNode([5]))))
