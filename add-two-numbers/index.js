@@ -43,7 +43,7 @@ function generateListNode (array) {
     const length = array.length
     return {
         val: array[0],
-        next: length > 1 ? generateListNode(array.slice(1, length)) : null
+        next: length > 1 ? generateListNode(array.slice(1, length)) : false
     }
 }
 
@@ -75,30 +75,7 @@ function listNodeSum(l1, l2, next = 0){
   }
 }
 
-let l1 = {
-    val: 2,
-    next: {
-        val: 4,
-        next: {
-            val: 3
-        }
-    }
-}, l2 = {
-    val: 5,
-    next: {
-        val: 6,
-        next: {
-            val: 4
-        }
-    }
+module.exports = {
+  addTwoNumbers,
+  generateListNode
 }
-
-// console.log('res :', addTwoNumbers(l1, l2))
-
-let l3 = generateListNode([1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1])
-let l4 = {"val":1,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":1,"next":null}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
-// console.log('l3, ', JSON.stringify(l3))
-// console.log(getListNodeValue(l3))
-console.log('---------------')
-// console.log('2, ', JSON.stringify(addTwoNumbers(l3, generateListNode([5, 6, 4]))))
-console.log('3, ', JSON.stringify(addTwoNumbers(generateListNode([5]), generateListNode([5]))))

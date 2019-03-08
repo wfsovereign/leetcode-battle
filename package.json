@@ -1,0 +1,23 @@
+{
+  "name": "leetcode-battle",
+  "version": "1.0.0",
+  "description": "leetcode battle ---",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha **/*.spec.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wfsovereign/leetcode-battle.git"
+  },
+  "author": "wfsovereign",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wfsovereign/leetcode-battle/issues"
+  },
+  "homepage": "https://github.com/wfsovereign/leetcode-battle#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.0.2"
+  }
+}
