@@ -15,7 +15,7 @@ var romanToInt = function (s) {
   }
 
   return s.split('').map(i => ROMAN_MAP[i]).reduce((pre, cur, index, it) => {
-    if ((index + 1) < it.length && cur !== it[index + 1] && (cur * 10) >= it[index + 1] && (cur * 10) <= (it[index + 1] * 10)) {
+    if ((index + 1) < it.length && cur < it[index + 1]) {
       return pre - cur
     }
     return pre + cur
