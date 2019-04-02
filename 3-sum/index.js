@@ -17,24 +17,21 @@ var threeSum = function (nums) {
     let next = i + 1
     let l = length - 1
 
-    if (nums[i] <= 0) {
-      while (next < l) {
-        if (next - 1 > i && nums[next] === nums[next - 1] && l < length - 1 && nums[l] === nums[l + 1]) {
-          next++
-          l--
-          continue
-        }
-
-        let sum = nums[i] + nums[next] + nums[l]
-        if (sum > 0) {
-          l--
-        } else if (sum < 0) {
-          next++
-        } else {
-          result.push([nums[i], nums[next], nums[l]])
-          next++
-          l--
-        }
+    if (nums[i] > 0) {
+      break
+    }
+    while (next < l) {
+      let sum = nums[i] + nums[next] + nums[l]
+      if (sum > 0) {
+        l--
+      } else if (sum < 0) {
+        next++
+      } else {
+        result.push([nums[i], nums[next], nums[l]])
+        next++
+        l--
+        while (next < l && nums[next] === nums[next - 1]) next++
+        while (next < l && nums[l] === nums[l + 1]) l--
       }
     }
   }
@@ -49,6 +46,11 @@ The second method:
 
 Runtime: 168 ms, faster than 90.77% of JavaScript online submissions for 3Sum.
 Memory Usage: 46.8 MB, less than 56.37% of JavaScript online submissions for 3Sum.
+
+The third method:
+
+Runtime: 164 ms, faster than 99.29% of JavaScript online submissions for 3Sum.
+Memory Usage: 47 MB, less than 42.28% of JavaScript online submissions for 3Sum.
 
 * */
 
