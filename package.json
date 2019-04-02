@@ -4,7 +4,7 @@
   "description": "leetcode battle ---",
   "main": "index.js",
   "scripts": {
-    "test": "mocha **/*.spec.js"
+    "test": "mocha **/*.spec.js -s 0"
   },
   "repository": {
     "type": "git",
