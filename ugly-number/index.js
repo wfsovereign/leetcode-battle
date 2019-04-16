@@ -26,6 +26,12 @@ var nthNumber = function (n) {
   return stupidNumberArray[n - 1]
 }
 
+/*
+* Initial array for put the ugly number, use pointer the multiple number of prime factors to calculate next number,
+* which is the minimal number the result of every prime factor multiply the pointer value,
+* then make pointer increase 1 which value in the array with index is pointer value multiply relative factor is equal current minimal value.
+* */
+
 module.exports = {
   nthNumber,
 }
