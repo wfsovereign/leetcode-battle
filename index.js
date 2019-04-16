@@ -1,5 +1,4 @@
 /*
-*
 * 评测题目: Stupid numbers are positive numbers whose prime factors only include 2, 3, 5,
 1 is first stupid number, please find the n-th number.
 
@@ -24,9 +23,9 @@ const isStupidNumber = (value) => {
   return result === 1
 }
 
-//8:35
-var nthNumber = function (n) {
-  const stupidNumberArray = [1, 2, 3, 4, 5]
+/*
+*
+* const stupidNumberArray = [1, 2, 3, 4, 5]
   if (n < stupidNumberArray.length) {
     return stupidNumberArray[n - 1]
   }
@@ -40,14 +39,26 @@ var nthNumber = function (n) {
     currentNumber++
   }
 
-  return currentNumber - 1
-}
+  return currentNumber - 1*/
 
-module.exports = {
-  nthNumber,
-}
+//8:35
+var nthNumber = function(n) {
+  const stupidNumberArray = [1, 2, 3, 4, 5]
+  if (n < stupidNumberArray.length) {
+    return stupidNumberArray[n - 1]
+  }
+  let i = 6
+  while (n > stupidNumberArray.length) {
+    if (isStupidNumber(i)) {
+      stupidNumberArray.push(i)
+    }
+    i++
+  }
 
+  return stupidNumberArray[stupidNumberArray.length -1]
+};
 
-console.log('----- 10>', nthNumber(9))
-console.log('----- 11>', nthNumber(11))
-// console.log('----- 100>', nthNumber(100))
+console.log('----- >', nthNumber(9))
+console.log('----- >', nthNumber(11))
+console.log('----- >', nthNumber(14))
+console.log('----- >', nthNumber(100))
