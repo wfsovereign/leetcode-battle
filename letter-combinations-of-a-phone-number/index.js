@@ -78,6 +78,47 @@ var letterCombinations1 = function(digits) {
   return combination('', digits, result)
 }
 
+var letterCombinations2 = function(digits) {
+  if (!digits) return []
+  const digitsMap = {
+    '2': ['a', 'b', 'c'],
+    '3': ['d', 'e', 'f'],
+    '4': ['g', 'h', 'i'],
+    '5': ['j', 'k', 'l'],
+    '6': ['m', 'n', 'o'],
+    '7': ['p', 'q', 'r', 's'],
+    '8': ['t', 'u', 'v'],
+    '9': ['w', 'x', 'y', 'z'],
+  }
+  if (digits.length === 1) {
+    return digitsMap[digits]
+  }
+  const letters = digits.split('').reduce((pre, cur) => {
+    pre.push(digitsMap[cur])
+    return pre
+  }, [])
+
+  return mergeArr(letters)
+
+  function mergeArr(array) {
+    if (array.length === 1) return array[0]
+    const midIndex = Math.floor(array.length / 2)
+    const left = array.slice(0, midIndex)
+    const right = array.slice(midIndex)
+    return combineArr(mergeArr(left), mergeArr(right))
+  }
+
+  function combineArr(arr1, arr2) {
+    const result = []
+    for (let i of arr1) {
+      for (let j of arr2) {
+        result.push(i + j)
+      }
+    }
+    return result
+  }
+}
+
 module.exports = {
-  letterCombinations,
+  letterCombinations: letterCombinations2,
 }
