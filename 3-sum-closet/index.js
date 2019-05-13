@@ -41,6 +41,12 @@ var threeSumClosest = function (nums, target) {
   return result
 }
 
+/*
+*  The important point have 2,
+ first is in the inner judgement, pre return when sum is equal target,
+ second is decrease or increase by compare sum and target
+* */
+
 module.exports = {
   threeSumClosest,
 }
