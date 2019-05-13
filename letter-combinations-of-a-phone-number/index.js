@@ -48,6 +48,35 @@ var letterCombinations = function(digits) {
   }
 }
 
+var letterCombinations1 = function(digits) {
+  if (!digits) return []
+  const digitsMap = {
+    '2': 'abc',
+    '3': 'def',
+    '4': 'ghi',
+    '5': 'jkl',
+    '6': 'mno',
+    '7': 'pqrs',
+    '8': 'tuv',
+    '9': 'wxyz',
+  }
+  let result = []
+
+  function combination(letter, digits) {
+    if (digits.length < 1) {
+      return result.push(letter)
+    }
+
+    const currentLetters = digitsMap[digits[0]]
+    const nextDigits = digits.substr(1)
+    for (let i = 0; i < currentLetters.length; i++) {
+      combination(letter + currentLetters[i], nextDigits)
+    }
+    return result
+  }
+
+  return combination('', digits, result)
+}
 
 module.exports = {
   letterCombinations,
