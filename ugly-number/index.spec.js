@@ -8,19 +8,19 @@ describe('Alibaba: stupid number', function () {
     expect(nthNumber(9)).to.equal(10)
   })
 
-  xit('should output 1356 when input 100', function () {
+  it('should output 1356 when input 100', function () {
     expect(nthNumber(100)).to.equal(1536)
   })
 
-  xit('should output 12754584 when input 800', function () {
+  it('should output 12754584 when input 800', function () {
     expect(nthNumber(800)).to.equal(12754584)
   })
 
-  xit('should output 26244000 when input 900', function () {
+  it('should output 26244000 when input 900', function () {
     expect(nthNumber(900)).to.equal(26244000)
   })
 
-  xit('should output 51200000 when input 1000', function () {
+  it('should output 51200000 when input 1000', function () {
     expect(nthNumber(1000)).to.equal(51200000)
   })
 

@@ -30,17 +30,16 @@ var fourSum = function(nums, target) {
   nums = nums.sort((a, b) => a - b)
 
   let star = 0, end = nums.length - 1
-
-
   const result = []
-  while (star <= end - 2) {
+  for (; star <= end - 2; star++) {
+    if ((nums[star] + nums[star + 1] + nums[star + 2] + nums[star + 3]) > target) break
     if ((star > 0) && nums[star] === nums[star - 1]) {
-      star++
       continue
     }
 
     for (let i = star + 1; i < end - 1; i++) {
       let s = i + 1, e = end
+      if ((nums[star] + nums[i + 1] + nums[i + 2] + nums[i]) > target) break
       if ((i > (star + 1)) && nums[i] === nums[i - 1]) continue
 
       while (s < e) {
@@ -57,7 +56,6 @@ var fourSum = function(nums, target) {
         }
       }
     }
-    star++
   }
 
   return result
