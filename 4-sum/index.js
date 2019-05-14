@@ -61,6 +61,13 @@ var fourSum = function(nums, target) {
   return result
 }
 
+/*
+* The n sum problem, conclusion method step,
+* 1. sort the array
+* 2. select base point, for 3 sum, the star point, next point and end point, for 4sum, add another iteration, the rest step is same to 3 sum
+* 3. add break and continue condition for optimize performance
+* */
+
 
 module.exports = {
   fourSum,
