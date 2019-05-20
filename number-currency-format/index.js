@@ -7,14 +7,7 @@ const currencyFormat = function(val) {
   if (target.length < 4) {
     return target
   }
-  return target.split('').reverse().reduce((pre, cur, index) => {
-    if (index === 0 || (index % 3 === 0)) {
-      pre.push(cur.toString())
-    } else {
-      pre[(pre.length || 1) - 1] = cur + pre[(pre.length || 1) - 1]
-    }
-    return pre
-  }, []).reverse().join(',')
+  return target.split('').reverse().map((item, index) => index > 0 && (index % 3 === 0) ? item + ',' : item).reverse().join('')
 }
 
 module.exports = {
