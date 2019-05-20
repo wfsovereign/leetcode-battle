@@ -28,24 +28,19 @@ Refactor the function into a recursive Fibonacci function that using a memoized 
 * tree recursion Can you make it so the memoization cache is private to this function?
 * */
 
-var fibonacci = function(n) {
-  if (n === 0 || n === 1)
-    return n
-
-  let i = 0
-  let map = {}
-
-  while (i <= n) {
-    if (i === 0 || i === 1) {
-      map[i] = i
-    } else {
-      map[i] = map[i - 1] + map[i - 2]
-    }
-    i++
+var fibonacci = (function() {
+  const cache = {
+    0: 0,
+    1: 1,
   }
+  return function(n) {
+    if (cache[n] !== undefined) {
+      return cache[n]
+    }
 
-  return map[n - 1] + map[n - 2]
-}
+    return cache[n] = fibonacci(n - 1) + fibonacci(n - 2)
+  }
+})()
 
 
 module.exports = {
