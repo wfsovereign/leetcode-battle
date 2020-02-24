@@ -55,6 +55,34 @@ Memory Usage: 33.9 MB, less than 70.00% of JavaScript online submissions for Val
 * */
 
 
+var isValid2 = function(s) {
+
+  var length = s.length
+
+  var m = {
+    '(': ')',
+    '[': ']',
+    '{': '}',
+  }
+
+  var stack = []
+
+  for (let i = 0; i < length; i++) {
+    if (!!m[s[i]]) {
+      stack.push(s[i])
+    } else {
+      var last = stack.pop()
+
+      if (m[last] !== s[i]) {
+        return false
+      }
+    }
+  }
+
+  return stack.length === 0
+};
+
+
 module.exports = {
-  isValid
+  isValid, isValid2
 }
