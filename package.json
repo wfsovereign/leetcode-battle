@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha **/*.spec.js -s 0",
-    "test:single": "mocha $1/ -s 0 --watch"
+    "test:single": "mocha $1/ -s 0 --watch --reporter nyan"
   },
   "repository": {
     "type": "git",
