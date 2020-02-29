@@ -71,12 +71,12 @@ var decodeString = function (s) {
       curNum = parseInt('' + curNum + s[i])
     } else {
       if (curChars.length > 0) {
-          if (curNum) curStack.push(curNum)
-          curStack.push(curChars)
+        if (curNum) curStack.push(curNum)
+        curStack.push(curChars)
 
-          curNum = currentIntParse
-          curChars = ''
-          continue
+        curNum = currentIntParse
+        curChars = ''
+        continue
       }
       curNum = parseInt('' + curNum + s[i])
       continue
@@ -109,6 +109,41 @@ Memory Usage: 33.7 MB, less than 100.00% of JavaScript online submissions for De
 * */
 
 
+var decodeString1 = function (s) {
+  let string = ''
+  let count = ''
+  const countStack = []
+  const stringStack = []
+
+  for (let i = 0; i < s.length; i++) {
+    let char = s[i]
+
+    if (char <= '9' && char >= '0') {
+      count += char
+      continue
+    }
+
+    if (char === '[') {
+      countStack.push(parseInt(count))
+      stringStack.push(string)
+      string = ''
+      count = ''
+      continue
+    }
+
+    if (char === ']') {
+      const num = countStack.pop()
+      let curStr = stringStack.pop()
+      string = curStr + string.repeat(num)
+      continue
+    }
+    string += char
+  }
+
+  return string
+}
+
 module.exports = {
   decodeString,
+  decodeString1,
 }
