@@ -83,7 +83,10 @@ LRUCache.prototype.addKeyOfStack = function(key) {
 }
 
 LRUCache.prototype.removeKeyOfStack = function(key) {
-  this.keyStack = this.keyStack.filter(item => item !== key)
+  const index = this.keyStack.indexOf(key)
+  if (index > -1) {
+    this.keyStack.splice(index, 1)
+  }
 }
 
 LRUCache.prototype.updateKeyIndexOfStack = function(key) {
@@ -101,6 +104,11 @@ LRUCache.prototype.updateKeyIndexOfStack = function(key) {
 /*
 * Runtime: 576 ms, faster than 5.02% of JavaScript online submissions for LRU Cache.
 Memory Usage: 77.2 MB, less than 10.00% of JavaScript online submissions for LRU Cache.
+* */
+
+/*
+* Runtime: 244 ms, faster than 23.69% of JavaScript online submissions for LRU Cache.
+Memory Usage: 58.7 MB, less than 40.00% of JavaScript online submissions for LRU Cache.
 * */
 
 
